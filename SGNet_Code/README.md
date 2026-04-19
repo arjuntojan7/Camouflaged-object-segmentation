@@ -6,16 +6,15 @@ A PyTorch implementation of **B1Net**: a camouflage object detection model built
 
 | File | Description |
 |------|-------------|
-| `01_data_split.py` | Filter COD10K by filename pattern and create train/test split lists |
-| `02_imports_config.py` | All imports, `DataPaths`, and `TrainConfig` dataclasses |
-| `03_utils.py` | Seeding, file utilities, category extractors, split builders |
-| `04_dataloader.py` | `CombinedTrainDataset` and `make_loader` |
-| `05_metrics_loss.py` | Loss functions (BCE+IoU, boundary, spectral) and evaluation metrics (Sm, maxF, MAE, IoU) |
-| `06_smt_backbone.py` | SMT-Tiny transformer backbone (Scale-Modulated Transformer) |
-| `07_model_b1net.py` | `B1Net` = SMT + D4SpectralPrior + FPNDecoder |
-| `08_train.py` | Training loop with AMP, grad clipping, LR scheduling |
-| `09_evaluate.py` | Model loading and val-set evaluation helpers |
-| `10_eval_pysod.py` | Standard COD evaluation using `pysodmetrics` (Smeasure, wFm, MAE, Em, Fm) |
+| `imports_config.py` | All imports, `DataPaths`, and `TrainConfig` dataclasses |
+| `utils.py` | Seeding, file utilities, category extractors, split builders |
+| `dataloader.py` | `CombinedTrainDataset` and `make_loader` |
+| `metrics_loss.py` | Loss functions (BCE+IoU, boundary, spectral) and evaluation metrics (Sm, maxF, MAE, IoU) |
+| `smt_backbone.py` | SMT-Tiny transformer backbone (Scale-Modulated Transformer) |
+| `model_b1net.py` | `B1Net` = SMT + D4SpectralPrior + FPNDecoder |
+| `train.py` | Training loop with AMP, grad clipping, LR scheduling |
+| `evaluate.py` | Model loading and val-set evaluation helpers |
+| `eval_pysod.py` | Standard COD evaluation using `pysodmetrics` (Smeasure, wFm, MAE, Em, Fm) |
 
 ## Datasets
 
@@ -31,11 +30,11 @@ pip install torch torchvision timm ptflops thop yacs pysodmetrics tqdm
 ## Usage (Kaggle)
 
 Run cells in order:
-1. `01_data_split.py` — generate split list `.txt` files
-2. `02_imports_config.py` → `03_utils.py` → `04_dataloader.py` — setup
-3. `06_smt_backbone.py` → `07_model_b1net.py` — define models
-4. `05_metrics_loss.py` → `08_train.py` — train B1Net
-5. `10_eval_pysod.py` — evaluate on test sets
+1. `data_split.py` — generate split list `.txt` files
+2. `imports_config.py` → `03_utils.py` → `04_dataloader.py` — setup
+3. `smt_backbone.py` → `07_model_b1net.py` — define models
+4. `metrics_loss.py` → `08_train.py` — train B1Net
+5. `eval_pysod.py` — evaluate on test sets
 
 ## Model: B1Net
 
