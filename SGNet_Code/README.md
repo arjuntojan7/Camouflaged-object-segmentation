@@ -11,7 +11,7 @@ A PyTorch implementation of **B1Net**: a camouflage object detection model built
 | `dataloader.py` | `CombinedTrainDataset` and `make_loader` |
 | `metrics_loss.py` | Loss functions (BCE+IoU, boundary, spectral) and evaluation metrics (Sm, maxF, MAE, IoU) |
 | `smt_backbone.py` | SMT-Tiny transformer backbone (Scale-Modulated Transformer) |
-| `model_b1net.py` | `B1Net` = SMT + D4SpectralPrior + FPNDecoder |
+| `model.py` | `B1Net` = SMT + D4SpectralPrior + FPNDecoder |
 | `train.py` | Training loop with AMP, grad clipping, LR scheduling |
 | `evaluate.py` | Model loading and val-set evaluation helpers |
 | `eval_pysod.py` | Standard COD evaluation using `pysodmetrics` (Smeasure, wFm, MAE, Em, Fm) |
